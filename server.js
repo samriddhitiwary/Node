@@ -6,8 +6,8 @@ dotenv.config({path:'./config.env'});
 
 const DB=process.env.DATABASE.replace('<PASSWORD>',process.env.DATABSE_PASSWORD);
 
-moongose.connect(DB,{
-    userNewUrlParser:true,
+mongose.connect(DB,{
+    userNewUrlParser:false,
     useCreateIndex:true,
     useFinAndModify:false
 }).then(con=>{
@@ -17,6 +17,6 @@ moongose.connect(DB,{
 
 const port=process.env.PORT || 5000;
 
-app.listen(port, ()=>{
-    console.log(`App running on port ${port}...`);
-});
+// app.listen(port, ()=>{
+//     console.log(`App running on port ${port}...`);
+// });
